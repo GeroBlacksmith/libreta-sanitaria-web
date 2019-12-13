@@ -1,9 +1,9 @@
 <section>
   <h1> {{title}} </h1>
 </section>
-<section>
+<section *ngIf="!userLoggedIn">
   <p>User Login</p>
-  <form>
+  <form [formGroup]="loginForm">
   <div>
     <input formControlName="username" type="text">
   </div>
@@ -11,7 +11,11 @@
     <input formControlName="password" type="password">
   </div>
   <div>
-    <button type="submit">Login</button>  
+    <button type="submit" (click)="submit()">Login</button>  
   </div>
   </form>
+</section>
+<section>
+  <p>Welcome user</p>
+  
 </section>
