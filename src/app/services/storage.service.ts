@@ -13,4 +13,7 @@ export class StorageService {
   getSession(key) {
     return sessionStorage.getItem(key);
   }
+  deleteSession(){
+    return sessionStorage.clear();
+  }
 }

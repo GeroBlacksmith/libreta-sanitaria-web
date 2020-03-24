@@ -1,21 +1,11 @@
-<section>
-  <h1> {{title}} </h1>
-</section>
-<section *ngIf="!userLoggedIn">
-  <p>User Login</p>
-  <form [formGroup]="loginForm">
-  <div>
-    <input formControlName="username" type="text">
-  </div>
-  <div>
-    <input formControlName="password" type="password">
-  </div>
-  <div>
-    <button type="submit" (click)="submit()">Login</button>  
-  </div>
-  </form>
-</section>
-<section>
-  <p>Welcome user</p>
-  
-</section>
+<ul>
+  <li>
+    <a routerLink="pet">Mis mascotas</a>
+  </li>
+  <li>
+    <a routerLink="profile">
+      Mi perfil
+    </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
