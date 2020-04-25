@@ -1,2 +1,45 @@
-<p>profile works!</p>
+<div *ngIf="!active">
+    <button (click)="activateProfileProcess=!activateProfileProcess">Activar mi perfil</button>
+</div>
+<div *ngIf="active">
+    <dl>
+       <dt>Nombre:</dt>
+       <dd>{{profile.name}}</dd>
+       <dt>Direción:</dt>
+       <dd>{{profile.address}}</dd>
+       <dt>Teléfono:</dt>
+       <dd>{{profile.telephone}}</dd> 
+    </dl>
+
+</div>
+<div *ngIf="activateProfileProcess">
+    <form [formGroup]="profileActivationForm" (submit)="submit()">
+        <div>
+            <label>
+                Nombre:
+            </label>
+            <div>
+                <input type="text" formControlName="name">
+            </div>
+        </div>
+        <div>
+            <label>
+                Direccion:
+            </label>
+            <div>
+
+                <input type="text" formControlName="address">
+            </div>
+        </div>
+        <div>
+            <label>
+                Telefono:
+            </label>
+            <div>
+                <input type="text" formControlName="telephone">
+            </div>
+        </div>
+        <button type="submit">Guardar mis datos</button>
+    </form>
+</div>
 <a routerLink="/pet">Mis mascotas</a>
