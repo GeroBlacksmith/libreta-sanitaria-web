@@ -1,4 +1,55 @@
-<p>pet works!</p>
+<button (click)="addPet()">Agregar mascota</button>
+<div *ngIf="showAddPetForm">
+    <form [formGroup]="newPet" (submit)="submit()">
+        <div>
+            <label>
+                Nombre:
+            </label>
+            <div>
+                <input type="text" formControlName="name">
+            </div>
+        </div>
+        
+        <div>
+            <label>
+                Fecha de nacimiento:
+        
+            </label>
+            <div>
+
+                <input type="text" formControlName="birthDate">
+            </div>
+        </div>
+        <div>
+            <label>
+                Especie:
+            </label>
+            <div>
+                <select  formControlName="specie">
+                    <option value="dog">Perro</option>
+                    <option value="cat">Gato</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label>
+               Raza:
+            </label>
+            <div>
+                <input type="text" formControlName="race">
+            </div>
+        </div>
+        <div>
+            <label>
+                Color:
+            </label>
+            <div>
+                <input type="text" formControlName="color">
+            </div>
+        </div>
+        <button type="submit">Guardar mascota ❤</button>
+    </form>
+</div>
 <ul>
     <li *ngFor="let pet of pets">
         {{pet.name}}

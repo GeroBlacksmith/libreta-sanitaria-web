@@ -42,6 +42,7 @@ export class ProfileComponent implements OnInit {
     this.http.setHeadersAuth();
     this.http.getProfileByUserId(this.storage.getSession("id")).subscribe(
       (res: any) => {
+        this.storage.saveSession('person', res._id);
         this.active = true;
         this.profile.id = res.id;
         this.profile.name = res.name;
