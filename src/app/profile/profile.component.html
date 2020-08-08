@@ -10,7 +10,7 @@
        <dt>Teléfono:</dt>
        <dd>{{profile.telephone}}</dd> 
     </dl>
-
+    <button (click)="edit()">Actualizar datos</button>
 </div>
 <div *ngIf="activateProfileProcess">
     <form [formGroup]="profileActivationForm" (submit)="submit()">
@@ -42,4 +42,5 @@
         <button type="submit">Guardar mis datos</button>
     </form>
 </div>
+
 <a routerLink="/pet">Mis mascotas</a>

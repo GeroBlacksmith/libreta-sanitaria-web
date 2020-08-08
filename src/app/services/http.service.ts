@@ -14,7 +14,6 @@ export class HttpService {
   apiUrl='http://localhost:3000';
 
   getUser(username) {
-    console.log(username, this.headers);
     return this.http.get(`${this.apiUrl}/auth/${username}`, {headers: this.headers});
   }
 
@@ -34,7 +33,13 @@ export class HttpService {
   postProfile(profile) {
     return this.http.post(`${this.apiUrl}/persons`,profile, {headers:this.headers})
   }
+  updateProfile(profile){
+    return this.http.put(`${this.apiUrl}/persons/${profile.id}/update`,profile, {headers:this.headers});
+  }
   getProfileByUserId(id){
     return this.http.get(`${this.apiUrl}/persons/userid/${id}`, {headers: this.headers});
+  }
+  postPet(pet){
+    return this.http.post(`${this.apiUrl}/pets`, pet, {headers:this.headers} )
   }
 }
