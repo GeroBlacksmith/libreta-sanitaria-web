@@ -7,12 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PetComponent } from './pet/pet.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
+import { FeedComponent } from './feed/feed.component';
 @NgModule({
   declarations: [
     AppComponent,
     PetComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,

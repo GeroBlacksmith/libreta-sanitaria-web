@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
     this.loggedUser = this.auth.parseJwt2(this.authUser);
     this.http.setHeadersAuth();
     this.http.getProfileByUserId(this.storage.getSession('id')).subscribe(
-      res => {
+      (res: any) => {
         this.active = true;
         console.log(res);
         this.profile.name = res.name;
@@ -49,7 +49,7 @@ export class ProfileComponent implements OnInit {
   submit() {
     console.log(this.profileActivationForm.getRawValue());
     this.http.postProfile(this.profileActivationForm.getRawValue()).subscribe(
-      res => {
+      (res:any) => {
         this.active = true;
         this.activateProfileProcess = false;
         this.profile = res;

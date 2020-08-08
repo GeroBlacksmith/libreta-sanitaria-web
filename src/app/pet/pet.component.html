@@ -1,6 +1,9 @@
 <p>pet works!</p>
 <ul>
     <li *ngFor="let pet of pets">
-        {{pet.name}}
+        <a [routerLink]="[pet._id]">
+            {{pet.name}}
+        </a>
     </li>
 </ul>
+<router-outlet></router-outlet>
